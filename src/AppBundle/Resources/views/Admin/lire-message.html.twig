@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Lecture de message | SEI{% endblock %}
+
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Outils de gestion</h2>
+      <a href="{{ path('messages') }}" data-tooltip="Retour aux messages" data-position="top" class="btn-floating btn-large cyan pulse tooltiped">
+        <i class="material-icons">arrow_back</i>
+      </a>
+    </div>
+    <div class="row">
+      <form class="ui form" action="index.html" method="post">
+        <div class="row">
+          <div class="input-field col l4 s12">
+            <label>Nom et prénoms</label>
+            <input value="{{ message.getFullname }}" type="text" readonly>
+          </div>
+          <div class="input-field col l4 s12">
+            <label>E-mail</label>
+            <input value="{{ message.getEmail }}" type="text" readonly required>
+          </div>
+          <div class="input-field col l4 s12">
+            <a href="mailto:{{ message.getEmail }}" class="btn waves-effect waves-light blue tooltipped" data-position="top" data-tooltip="Répondre à l'utilisateur par mail">
+              <i class="material-icons right">send</i>
+            </a>
+            &nbsp;&nbsp;&nbsp;
+            {% if message.user is empty %}
+            <button class="btn waves-effect waves-light red tooltipped" data-position="top" data-tooltip="Utilisateur non enregistré ou déconnecté lors de l'envoi du message">
+              <i class="user times icon"></i>
+            </button>
+            {% else %}
+            <button class="btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="Cet utilisateur est membre">
+              <i class="user plus icon"></i>
+            </button>
+            {% endif %}
+          </div>
+        </div>
+        <br>
+        <div class="input-field col l12 s12">
+          <textarea name="name" class="materialize-textarea" rows="8" cols="80" readonly>{{ message.getMessage }}</textarea>
+          <label>Message</label>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

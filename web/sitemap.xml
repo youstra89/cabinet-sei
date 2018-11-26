@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://cabinet-sei.ci/</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/services</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/services/assistance-constitution-dossier-campus-france</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/services/assistance-candidature-universites</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/services/aide-dossier-logement</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/services/conseils-dossier-visa</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/countries</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/pays-destination/france</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/pays-destination/belgique</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/pays-destination/canada</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/pays-destination/maroc</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/contact</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/login</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/about</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/resetting/request</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cabinet-sei.ci/register/</loc>
+  <lastmod>2018-11-09T07:29:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

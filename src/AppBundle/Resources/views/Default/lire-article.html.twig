@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Lire Article | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Lecture d'article</h1>
+      <div class="row center">
+        <!-- <h5 class="header col s12 light">Vous pouvez aussi prendre render-vous avec nous</h5> -->
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <h2>Lecture de l'article <i><b>{{ article.title }}</b></i></h2>
+    <div class="row">
+			<div class="col l4 m6 s6">
+				<h5 for="">
+					Type
+				</h5> {{ article.articleType }}
+			</div>
+			<div class="col l4 m6 s6">
+				<h5 for="">
+					Titre
+				</h5> {{ article.title }}
+			</div>
+			<div class="col l4 m6 s6">
+				<h5 for="">
+					Description
+				</h5> {{ article.description }}
+			</div>
+		</div>
+    <br>
+		<div class="row">
+			<div class="col l4 m6 s6">
+        <h5 for="">
+          Rédacteur
+        </h5> {{ article.user.username }}
+      </div>
+			<div class="col l4 m6 s6">
+        <h5 for="">
+          Dernière modification
+        </h5> {{ article.dateUpdate|date('d-m-Y à H:i') }}
+      </div>
+			<div class="col l4 m6 s6">
+        <h5 for="">
+          Date publication
+        </h5>
+        {{ article.datePublished|date('d-m-Y à H:i') }}
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <h5>
+        Contenu de l'article
+      </h5>
+      <div class="col s12 m12 l12 z-depth-4">
+        <br>
+        <center><h2>{{ article.title }}</h2></center>
+        {{ article.content|raw }}
+        <br>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prendre rendez-vous avec le cabinet SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Contact</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Prise de rendez-vous</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="header center">Fixer un rendez-vous </h1>
+      <p>Veuillez prendre un rendez-vous s’il vous plait </p>
+      <form method="post" class="col s12">
+        <div class="row">
+          <div class="input-field col l6 s12">
+            <label>Nom et prénoms</label>
+            <input value="{{ app.user.nom }} {{ app.user.pnom }}" type="text" readonly required  name="nom">
+          </div>
+          <div class="input-field col l6 s12">
+            <label>E-mail</label>
+            <input value="{{ app.user.email }}" type="text" readonly required name="email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col l4 s6">
+            <select class="" name="subject" required>
+              <option value="">Sélectionnez un sujet</option>
+              <option value="Renseignements">Renseignements</option>
+              <option value="Dossier Campus France">Dossier Campus France</option>
+              <option value="Dossier pour la Belgique">Dossier pour la Belgique</option>
+              <option value="Dossier pour le Canada">Dossier pour le Canada</option>
+              <option value="Dossier pour le Maroc">Dossier pour le Maroc</option>
+              <option value="Dossier logement">Dossier logement</option>
+              <option value="Dossier visa">Dossier visa</option>
+              <option value="Autre">Autre(Précisez dans le message)</option>
+            </select>
+            <label for="subject">Sujet</label>
+          </div>
+          <div class="input-field col l4 s6">
+            <input type="date" name="date" id="date" value="" min="{{ 'now'|date("Y-m-d") }}" max="{{ 'now'|date_modify("+60 day")|date("Y-m-d") }}" required>
+            <label for="date">Date</label>
+          </div>
+          <div class="col l4 s6">
+            <label for="heure">Heure</label>
+            <select class="browser-default" name="heure" id="heure" required>
+              <option value="">Choisir une heure</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <textarea required class="materialize-textarea" name="message"></textarea>
+            <label>Message</label>
+          </div>
+        </div>
+        <div class="row">
+          <input class="btn waves-effect waves-light orange" type="submit" name="action" value="Enregistrer le RDV">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

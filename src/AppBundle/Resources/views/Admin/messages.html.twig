@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Messages | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Outils de gestion</h2>
+      <a href="{{ path('panel_admin') }}" data-tooltip="Retour aux Panel Admin" data-position="top" class="btn-floating btn-large cyan pulse tooltiped">
+        <i class="material-icons">arrow_back</i>
+      </a>
+    </div>
+    <div class="row">
+      <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Destinateur</th>
+              <th>E-mail</th>
+              <th>Sujet</th>
+              <th>Message</th>
+              <th>Date d'envoi</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set numero = 0 %}
+            {% for message in messages %}
+              {% set numero = numero + 1 %}
+              {% set color = '' %}
+              {% if message.readAt is empty %}
+                {% set color = 'bold' %}
+              {% endif %}
+              <tr style="font-weight: {{ color }};">
+                <td>{{ numero }}</td>
+                <td>{{ message.getFullname }}</td>
+                <td>{{ message.getEmail }}</td>
+                <td>{{ message.getSubject }}</td>
+                <td>
+                  {% if message.getMessage|length > 50 %}
+                    {{ message.getMessage|slice(0, 50) ~ '...' }}
+                  {% else %}
+                    {{ message.getMessage }}
+                  {% endif %}
+                </td>
+                <td width="10%" style="font-size: 0.8em">{{ message.getDateSave|date("d-m-y H:i") }}</td>
+                <td>
+                  <a href="{{ path('read_message', {'id': message.id}) }}" class="tooltipped" data-position="top" data-tooltip="Lire le message"><i class="material-icons">chrome_reader_mode</i></a>
+                  <a href="{{ path('read_message', {'id': message.id}) }}"><i class="delete icon"></i></a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="row">
+      <div class="navigation">
+          {{ knp_pagination_render(messages) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

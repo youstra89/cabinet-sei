@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Membres | SEI{% endblock %}
+
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Outils de gestion</h2>
+      <a href="{{ path('panel_admin') }}" data-tooltip="Retour au Panel Admin" data-position="top" class="btn-floating btn-large cyan pulse tooltiped">
+        <i class="material-icons">arrow_back</i>
+      </a>
+    </div>
+    <div class="row">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Nom & Prénom</th>
+            <th>Login</th>
+            <th>Email</th>
+            <th>Dernière connexion</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set numero = 0 %}
+          {% for user in users %}
+            {% set numero = numero + 1 %}
+            {% set color = '' %}
+            <tr>
+              <td>{{ numero }}</td>
+              <td>{{ user.getPnom }} {{ user.getNom }}</td>
+              <td>{{ user.getUsername }}</td>
+              <td>{{ user.getEmail }}</td>
+              <td style="font-size: 0.8em">
+                {% if user.lastLogin is defined %}
+                  {{ user.lastLogin|date("d-m-y à H:i") }}
+                {% else %}
+                  Jamain connecté
+                {% endif %}
+              </td>
+              <td>
+                <a href="{{ path('user_profile', {id: user.id}) }}" data-position="top" data-tooltip="Voir le profile" class="tooltipped"><i class="material-icons">send</i></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

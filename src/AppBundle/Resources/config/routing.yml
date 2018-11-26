@@ -1,0 +1,143 @@
+homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+lire_article:
+    path: /cabinet-sei/article/{id}
+    defaults: { _controller:AppBundle:Default:lireArticle }
+
+tous_les_articles:
+    path: /cabinet-sei/article
+    defaults: { _controller:AppBundle:Default:tousLesArticles }
+
+about_us:
+    path: /about/cabinet-sei
+    defaults: { _controller: AppBundle:About:index }
+
+services:
+    path: /services-cabinet-sei
+    defaults: { _controller: AppBundle:Services:index }
+
+service_dossier_campus_france:
+    path: /services-cabinet-sei/assistance-constitution-dossier-campus-france
+    defaults: { _controller: AppBundle:Services:constitutiondossiercampusfrance }
+
+service_cadidature_universites:
+    path: /services-cabinet-sei/assistance-candidature-universites
+    defaults: { _controller: AppBundle:Services:candidatureuniversites }
+
+service_logement:
+    path: /services-cabinet-sei/aide-dossier-logement
+    defaults: { _controller: AppBundle:Services:logement }
+
+service_dossier_visa:
+    path: /services-cabinet-sei/conseils-dossier-visa
+    defaults: { _controller: AppBundle:Services:constitutiondossiervisa }
+
+countries:
+    path: /pays-destination-cabinet-sei
+    defaults: { _controller: AppBundle:Countries:index }
+
+france:
+    path: /pays-destination-cabinet-sei/france
+    defaults: { _controller: AppBundle:Countries:france }
+
+belgique:
+    path: /pays-destination-cabinet-sei/belgique
+    defaults: { _controller: AppBundle:Countries:belgique }
+
+canada:
+    path: /pays-destination-cabinet-sei/canada
+    defaults: { _controller: AppBundle:Countries:canada }
+
+maroc:
+    path: /pays-destination-cabinet-sei/maroc
+    defaults: { _controller: AppBundle:Countries:maroc }
+
+contact_us:
+    path: /contact-cabinet-sei
+    defaults: { _controller: AppBundle:Contact:index }
+
+rdv:
+    path: /contact-cabinet-sei/prendre-render-vous
+    defaults: { _controller: AppBundle:Contact:rdv }
+
+my_account:
+    path: /account
+    defaults: { _controller: AppBundle:Account:index }
+
+update_profile:
+    path: /update-profile
+    defaults: { _controller: AppBundle:Account:updateProfile }
+
+heures_rdv_dispo:
+    path: /heures-non-disponibles-rdv/{dateRdv}
+    defaults: { _controller: AppBundle:Contact:heuresNonDisponibles }
+    options:
+        expose: true
+
+panel_admin:
+    path: /admin
+    defaults: { _controller: AppBundle:Admin:index }
+
+messages:
+    path: /admin/messages
+    defaults: { _controller: AppBundle:Admin:messages }
+
+membres:
+    path: /admin/membre
+    defaults: { _controller: AppBundle:Admin:membres }
+
+user_profile:
+    path: /admin/membre/profile/{id}
+    defaults: { _controller: AppBundle:Admin:profile }
+    requirements:
+        id: \d+
+
+read_message:
+    path: /admin/messages/{id}
+    defaults: { _controller: AppBundle:Admin:lireMessage }
+    requirements:
+        id: \d+
+
+tous_les_rdv:
+    path: /admin/tous-les-rdv
+    defaults: { _controller: AppBundle:Admin:tousLesRdv }
+
+voir_rdv:
+    path: /admin/rdv/{id}
+    defaults: { _controller: AppBundle:Admin:voirRdv }
+    requirements:
+        id: \d+
+
+articles:
+    path: /admin/articles
+    defaults: { _controller:AppBundle:Admin:articles }
+
+rediger_article:
+    path: /admin/rediger-article
+    defaults: { _controller:AppBundle:Admin:redigerArticle }
+
+editer_article:
+    path: /admin/editer-article/{id}
+    defaults: { _controller:AppBundle:Admin:editerArticle }
+    requirements:
+        id: \d+
+
+voir_article:
+    path: /admin/voir-article/{id}
+    defaults: { _controller:AppBundle:Admin:voirArticle }
+    requirements:
+        id: \d+
+
+archiver_article:
+    path: /admin/archiver-article/{id}
+    defaults: { _controller:AppBundle:Admin:archiverArticle }
+    requirements:
+        id: \d+
+
+archive:
+    path: /admin/articles-archives
+    defaults: { _controller:AppBundle:Admin:archive }
+    requirements:
+        id: \d+

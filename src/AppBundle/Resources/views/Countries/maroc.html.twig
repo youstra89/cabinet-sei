@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Le Maroc, l'un de nos pays de destination. Suivez avec nous comment y obtenir de la place pour vos études à l'étranger" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, études à l'international, études en Afrique du nord, études au maghreb, universités marocaines, universités internationales" />
+{% endblock %}
+
+{% block title %}Etudes au Maroc - Cabinet SEI{% endblock %}
+
+{% block sidebar_color %}
+  <div class="ui teal vertical inverted sidebar menu">
+{% endblock %}
+
+{% block page_header_color %}
+  <div class="ui teal inverted vertical masthead center aligned segment">
+{% endblock %}
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos destinations</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Faites une visite virtuelle des pays que nous proposons</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <h1>Maroc</h1>
+    <div class="row">
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ asset('img/destinations/maroc_5.jpg') }}" alt="Cabinet SEI - Université des lettres et des sciences modernes"> <!-- random image -->
+            <div class="caption center-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Université des lettres et des sciences modernes</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/nvo/maroc_1.jpg') }}" alt="Cabinet SEI - Université Internationale de Casablanca"> <!-- random image -->
+            <div class="caption left-align">
+              <h3>Cité Universitaire</h3>
+              <h5 class="light grey-text text-lighten-3">Université Internationale de Casablanca</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/nvo/bibliotheque_universitaire_rabat.jpg') }}" alt="Cabinet SEI - Bibliothèque universitaire - Rabat"> <!-- random image -->
+            <div class="caption right-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Bibliothèque universitaire - Rabat</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="my-paragraphs my-alinea">
+        Le Royaume du Maroc a érigé l'enseignement et la formation en priorité nationale et y consacre de plus en plus de
+        moyens pour répondre à la pression des jeunes et aux besoins des entreprises marocaines et multinationales s'installant
+        dans le royaume. Il est devenu aujourd’hui une destination majeure pour beaucoup d’étudiants de l’Afrique subsaharienne.
+        Etudier au Maroc constitue une alternative aux études dans les universités européennes pour ces derniers dans la mesure
+        où plusieurs établissements français s’implantent dans le pays, des enseignants français s’y déplacent et la double
+        diplomation est très développée. Ainsi, retrouvons nous les grandes écoles comme Ecole Centrale Casablanca, Toulouse Business
+        School Casablanca et d’autres implantées à Rabat et à Marrakech.
+      </p>
+    </div>
+    <div class="row">
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ asset("img/destinations/maroc_1.jpg") }}" alt="Cabinet SEI - Univertité Internationale de Rabat"> <!-- random image -->
+            <div class="caption center-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Univertité Internationale de Rabat</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/destinations/maroc_2.jpg") }}" alt="Cabinet SEI - Ecole centrale Casablanca"> <!-- random image -->
+            <div class="caption left-align">
+              <h3>Récipiendaires</h3>
+              <h5 class="light grey-text text-lighten-3">2ème promotion d’ingénieurs de l’école centrale Casablanca</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/destinations/maroc_3.png") }}" alt="Cabinet SEI - Toulouse Business School à Casablanca"> <!-- random image -->
+            <div class="caption right-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Toulouse Business School implantée à Casablanca</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/destinations/maroc_4.jpg") }}" alt="Cabinet SEI - Toulouse Business School à Casablanca"> <!-- random image -->
+            <div class="caption right-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Toulouse Business School implantée à Casablanca</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+          <p class="my-paragraphs my-alinea">
+            A la base, l’Enseignement Supérieur Universitaire au Maroc compte actuellement <strong>12 universités</strong> publiques regroupant
+            <strong>125 établissements</strong>. Les établissements universitaires sont classés en deux catégories : (1) les
+            <font style="color: red, font-weight: bold">établissements à accès ouvert</font> tels que   les Facultés des Sciences Juridiques,
+            Economiques et Sociales etc et (2) les <font style="color: red, font-weight: bold">établissements à accès régulé</font>
+            tels   les Facultés de Médecine et de Pharmacie, les Ecoles d’Ingénieurs etc.
+          </p>
+          <p class="my-paragraphs my-alinea">
+            A Côté de ce système public, un système privé bien régulé et suivi par l’Etat fonctionne parfaitement
+          </p>
+          <p class="my-paragraphs my-alinea">
+            Avec l’offensive des entreprises marocaines dans les pays d’Afrique subsaharienne, étudier au Maroc représente
+            un choix judicieux susceptible d’assurer une insertion professionnelle rapide et réussie dans les pays d’origine
+            des étudiants étrangers.
+          </p>
+        </div>
+
+  </div>
+{% endblock %}

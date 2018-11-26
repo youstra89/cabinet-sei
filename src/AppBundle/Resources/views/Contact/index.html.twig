@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Contactez le cabinet SEI pour vous assister dans les différents procéssus pour les études à l'étranger" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, assistant pour les études à l'international" />
+{% endblock %}
+
+{% block title %}Contact SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Contact</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Vous pouvez aussi prendre render-vous avec nous</h5>
+        <a href="{{ path('rdv') }}" class="btn-large waves-effect waves-light orange">Fixer un rendez-vous</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <div class="col l7 m12">
+        <div class="row">
+          <div class="col s12">
+            <h2 class="ui header">Contact</h2>
+            <p class="my-paragraphs">Nous vous remercions de bien vouloir remplir le formulaire ci-dessous si vous souhaitez être recontacté par le Cabinet.
+              N’hésitez pas à bien détailler votre projet dans « Message ». Plus nous sommes renseignés, mieux vous êtes servis!</p>
+          </div>
+          <form class="col s12" method="post">
+            <div class="row">
+              <div class="input-field col s12">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                  <input value="{{ app.user.nom }} {{ app.user.pnom }}" id="nom" type="text" name="nom" readonly required>
+                {% else %}
+                  <input id="nom" type="text" name="nom"  class="validate" required>
+                {% endif %}
+                <label for="nom">Nom et prénom</label>
+                <span class="helper-text" data-error="Entrée incorrecte" data-success="L'entrée semble correcte">Ex: KOUAME Konan </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                  <input value="{{ app.user.email }}" id="email"  type="email" readonly name="email" required>
+                {% else %}
+                  <input id="email"  type="email" name="email" required>
+                {% endif %}
+                <label for="email">Email</label>
+                <span class="helper-text" data-error="Email incorrect" data-success="Le mail semble correcte">Ex: kouamekonan@gmail.com </span>
+              </div>
+              <div class="input-field col s6">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                  <input value="{{ app.user.contact }}" id="contact" type="text" name="contact" readonly required>
+                {% else %}
+                  <input id="contact" type="text" name="contact" required title="Laissez un numéro de téléphone joignable">
+                {% endif %}
+                <label for="contact">Numéro de téléphone</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="subject" type="text" name="subject" required>
+                <label for="subject">Sujet</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                  <textarea id="message" class="materialize-textarea" name="message" rows="10"></textarea>
+                <label for="message">Message</label>
+              </div>
+            </div>
+            <div class="row">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Envoyer
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col l5 m12">
+        <h2>Notre localisation</h2>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3715.7914578706855!2d-4.074864693281117!3d5.350366843073974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1c0266ae574cf%3A0xcdf621900647e7ad!2sMOOV+STORE+YOPOUGON!5e0!3m2!1sfr!2sci!4v1541718695816" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jPyTnOpPatEypbeZbEZdPaemh2hq3MLt" width="100%" height="300"></iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

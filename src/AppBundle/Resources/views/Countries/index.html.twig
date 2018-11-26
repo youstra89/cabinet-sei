@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Pourcourez les pays de destinations que propose le Cabinet SEI" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, études à l'international, études en France, études en Belgique, études en Europe, universités belges, universités internationales" />
+{% endblock %}
+
+
+
+{% block title %}Etudes à l'étranger avec le cabinet SEI, en France, en Belgique, au Canada, au Maroc{% endblock %}
+
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos destinations</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"></h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+      <div class="row animatedParent">
+        <h2 class="animated growIn slow" style="color: orange">Pays de destinations chez SEI</h2>
+      </div>
+      <div class="row animatedParent">
+        <div class="col s12 m12 l12 animated bounceIn z-depth-4">
+          <div class="animated growIn slow">
+            <h3 class="header center">France</h3>
+          </div>
+          <div class="animated growIn slow center">
+            <a href="{{ path('france') }}" alt=""><img class="animated growIn" src="{{ asset('img/flags/fra.png') }}"></a>
+          </div>
+          <div class="animated growIn slow">
+            <p class="center"></p><br>
+          </div>
+        </div>
+      </div>
+      <div class="row animatedParent">
+        <div class="col s12 m12 l12 animated bounceIn z-depth-4">
+          <div class="animated growIn slow">
+            <h3 class="header center">Belgique</h3>
+          </div>
+          <div class="animated growIn slow center">
+            <a href="{{ path('belgique') }}" alt=""><img class="animated growIn" height="75%" src="{{ asset('img/flags/bel.png') }}"></a>
+          </div>
+          <div class="animated growIn slow">
+            <p class="center"></p><br>
+          </div>
+        </div>
+      </div>
+      <div class="row animatedParent">
+        <div class="col s12 m12 l12 animated bounceIn z-depth-4">
+          <div class="animated growIn slow">
+            <h3 class="header center">Canada</h3>
+          </div>
+          <div class="animated growIn slow center">
+            <a href="{{ path('canada') }}" alt=""><img class="animated growIn" src="{{ asset('img/flags/can.png') }}"></a>
+          </div>
+          <div class="animated growIn slow">
+            <p class="center"></p><br>
+          </div>
+        </div>
+      </div>
+      <div class="row animatedParent">
+        <div class="col s12 m12 l12 animated bounceIn z-depth-4">
+          <div class="animated growIn slow">
+            <h3 class="header center">Maroc</h3>
+          </div>
+          <div class="animated growIn slow center">
+            <a href="{{ path('maroc') }}" alt=""><img class="animated growIn" src="{{ asset('img/flags/mar.png') }}"></a>
+          </div>
+          <div class="animated growIn slow">
+            <p class="center"></p><br>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Réinitialisation de mot de passe SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Réinitialisation de mot de passe</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"></h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <h2 class="ui header">Connectez vous</h2>
+        {% block fos_user_content %}
+          {% include "@FOSUser/Resetting/reset_content.html.twig" %}
+        {% endblock fos_user_content %}
+  </div>
+{% endblock %}

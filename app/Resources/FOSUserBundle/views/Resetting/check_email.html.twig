@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "base.html.twig" %}
+
+
+{% block title %}Attente confirmation réinitialisation SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">confirmation en attente</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">En attente de la confirmation de la réinitialisation du mot de passe</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+<div class="ui container">
+  <div class="ui form">
+    {% block fos_user_content %}
+    <p>
+      {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+    </p>
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Assistance pour l'obtention de visa pour séjourner en toute tranquillité à l'étranger" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, services SEI, aide dossier visa, visa pour études en France, visa pour études en Belgique, visa pour études au Canada, visa pour études au Maroc" />
+{% endblock %}
+
+{% block title %}Services SEI - Conseils dossier VISA{% endblock %}
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos services</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des services à des coûts raisonnables</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2>Conseil pour la constitution de dossiers VISA</h2>
+      <p class="my-paragraphs my-alinea">
+        L’obtention du visa est la dernière étape pour enfin s’envoler poursuivre son rêve d’études dans les
+        meilleures universités dans lesquelles l’on a obtenu une admission. Cependant, une mauvaise constitution
+        du dossier de visa pour le consulat peut coûter très cher ou retarder le processus. Il est à noter que la
+        procédure de candidature qui découle sur une acceptation d’au moins une université est dissociée de la
+        procédure visa même si elle est la première étape. Les dossiers liés au financement, au logement et autres
+        doivent être bien ficelés et cohérents. Le Cabinet SEI est là pour vous assister et vous orienter dans ce sens.
+      </p>
+    </div>
+    <div class="row">
+      <center>
+        <img src="{{ asset("img/new-selection/visa.jpg") }}" width="20%" alt="Obtener votre visa avec l'assistance du cabinet SEI">
+      </center>
+    </div>
+  </div>
+{% endblock %}

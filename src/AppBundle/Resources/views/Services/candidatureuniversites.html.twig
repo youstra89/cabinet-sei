@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Les procédures à suivre pour la candidature aux différentes universités internationales et étrangères" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, services SEI, candidature Campus France, candidature universités étrangères, procédure pour candidature différentes universités" />
+{% endblock %}
+
+{% block title %}Services SEI - Candidature universités étrangères{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos services</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des services à des coûts raisonnables</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2>Candidature pour l'accès aux différentes universités belges, canadiennes et marocaines.</h2>
+      <div class="col l4 m12">
+        <a href="http://www.ulb.ac.be/" title="Visiter le site de l'Université Libre de Bruxelles"><img src="{{ asset('img/logos/ulb.jpg') }}" width="75%" alt="Logo Université Libre de Bruxelles"></a>
+      </div>
+      <div class="col l4 m12">
+        <a href="https://www.ulaval.ca/" title="Visiter le site de l'université de Laval"><img src="{{ asset('img/logos/laval.png') }}" width="75%" alt="Logo Université de Laval"></a>
+      </div>
+      <div class="col l4 m12">
+        <a href="http://www.uic.ac.ma/" title="Visiter le site de l'Université Internationale de Casablanca"><img src="{{ asset('img/logos/uic.png') }}" width="75%" alt="Logo Université Internationale de Casablanca"></a>
+      </div>
+    </div>
+    <div class="row">
+      <p class="my-paragraphs my-alinea">
+        Ne disposant pas de plateforme comme <a href="https://www.ivoire.campusfrance.org/" title="Allez sur le site Campus France">Campus France </a>où la majorité des universités du pays sont
+        connectées, postuler pour les universités du Canada, de la Belgique et du Maroc requiert un
+        dossier de candidature pour chaque université parfois pour chaque formation. Ces procédures sont
+        généralement fastidieuses, longues et susceptibles de décourager beaucoup d’étudiants. Avec
+        le Cabinet SEI, vous n’avez plus à vous faire de soucis pour la constitution de vos dossiers.
+        Il vous accompagne et vous donne les meilleurs conseils dans le choix de vos universités et formations.
+      </p>
+    </div>
+  </div>
+{% endblock %}

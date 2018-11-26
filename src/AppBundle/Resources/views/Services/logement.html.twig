@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Nous pouvons aussi vous aider dans l'acquisition de logement dans un des pays de destination pour vos études." />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, services SEI, logement en France, logement en Belgique, logement au Canada, logement au Maroc" />
+{% endblock %}
+
+{% block title %}Services SEI - Acquisition de logement{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos services</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des services à des coûts raisonnables</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h1>Aide pour l'acquisition de logement</h1>
+      <p class="my-paragraphs">
+        L’obtention d’un logement à partir du pays d’origine est une casse-tête pour la plupart des
+        étudiants postulant pour des études à l’étranger.  Elle est une des conditions nécessaires pour
+        l’obtention du visa pour des pays comme la France.  Le Cabinet SEI vous apporte une assistante dans
+        la constitution de votre « Dossier Social Etudiant (DSE » afin de bénéficier de logement dans les
+        résidences universitaires. Aussi, il vous accompagne dans la recherche de logements auprès de résidences
+        universitaires privées et auprès des particuliers.
+      </p>
+    </div>
+    <div class="row">
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ asset("img/nvo/cuip.jpg") }}" alt="Cité Universitaire Internationale de Paris"> <!-- random image -->
+            <div class="caption center-align">
+              <h2>Cité Universitaire</h2>
+              <h5 class="light grey-text text-lighten-3">Cité Universitaire Internationale de Paris</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/residence_triolet.jpg") }}" alt="Les résidences Triolet"> <!-- random image -->
+            <div class="caption left-align">
+              <h2>Résidences</h2>
+              <h5 class="light grey-text text-lighten-3">Les résidences Triolet</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/crous_cite_voie_domitienne_montpellier.jpg") }}" alt="Cité Dominitienne - Montpellier"> <!-- random image -->
+            <div class="caption right-align">
+              <h2>Résidences</h2>
+              <h5 class="light grey-text text-lighten-3">Cité Dominitienne - Montpellier</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset("img/residences_etudiantes_supagro_montpellier.jpg") }}" alt="La résidence SupAgro à Montpellier"> <!-- random image -->
+            <div class="caption right-align">
+              <h2>Résidences</h2>
+              <h5 class="light grey-text text-lighten-3">La résidence SupAgro à Montpellier</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

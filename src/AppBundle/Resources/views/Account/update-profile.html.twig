@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Découvrez qui sommes-nous dans cette page" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, expert des l'assistance pour les études à l'international" />
+{% endblock %}
+
+{% block title %}Mon compte | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Mon compte personnel</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"></h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2>Informations personnelles</h2>
+      <!-- <div class="ui equal width aligned stackable padded grid"> -->
+        <form class="col s12" action="" method="post">
+          <div class="row">
+            <div class="input-field col l4 s12">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" value="{{ app.user.nom }}" required>
+            </div>
+            <div class="input-field col l4 s12">
+              <label for="pnom">Prénom</label>
+              <input type="text" id="pnom" name="pnom" value="{{ app.user.pnom }}" required>
+            </div>
+            <div class="input-field col l4 s12">
+              <label for="contact">Contact</label>
+              <input type="text" id="contact" name="contact" value="{{ app.user.contact }}" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l6 s12">
+              <select name="filiere" id="filiere">
+                <option value="" selected>Faites un choix dans la liste</option>
+                <option value="Assistanat de direction">Assistanat de direction</option>
+                <option value="Bâtiment">Bâtiment</option>
+                <option value="Finances et comptabilité">Finances et comptabilité</option>
+                <option value="NTIC">NTIC</option>
+                <option value="Pont et chaussée">Pont et chaussée</option>
+                <option value="Réseaux et télécommunication">Réseaux et télécommunication</option>
+                <option value="Ressources humaines">Ressources humaines</option>
+                <option value="Travaux publics">Travaux publics</option>
+              </select>
+              <label for="filiere">Filière</label>
+            </div>
+            <div class="input-field col l6 s12">
+              <label for="level">Niveau de formation</label>
+              <input type="text" id="level" name="level" value="{{ app.user.level }}" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l12 s12">
+              <label for="school">Ecole ou université fréquentée</label>
+                <input type="text" id="school" name="school" value="{{ app.user.school }}" required>
+              </div>
+          </div>
+          <button type="submit" class="btn-large waves-effect waves-light teal">Mettre à jour mon profil</button>
+        </form>
+      <!-- </div> -->
+    </div>
+  </div>
+{% endblock %}

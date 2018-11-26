@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Rendez-vous | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+        <a href="{{ path('tous_les_rdv') }}" class="btn-floating btn-large cyan pulse tooltiped" data-tooltip="Retour aux rendez-vous" data-position="top">
+          <i class="material-icons">arrow_back</i>
+        </a>
+    </div>
+    <div class="row">
+      <h2 class="ui header">Détails du rendez-vous</h2>
+      <form class="ui form">
+        <div class="row">
+          <div class="input-field col l6">
+            <label for="">Nom complet</label>
+            <input type="text" name="" value="{{ rdv.user.nom }} {{ rdv.user.pnom }}" readonly>
+          </div>
+          <div class="input-field col l6">
+            <label for="">Email</label>
+            <input type="text" name="" value="{{ rdv.user.email }}" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col l6">
+            <label for="">Date</label>
+            <input type="text" name="" value="{{ rdv.dateRdv|date("d-m-Y") }}" readonly>
+          </div>
+          <div class="input-field col l6">
+            <label for="">Heure</label>
+            <input type="text" name="" value="{{ rdv.heure }}" readonly>
+          </div>
+          <div class="input-field col l6">
+            <label for="">Sujet</label>
+            <input type="text" name="" value="{{ rdv.subject }}" readonly>
+          </div>
+        </div>
+        <div class="field">
+          <textarea class="materialize-textarea" name="name" rows="8" cols="50" readonly>{{ rdv.message }}</textarea>
+        </div>
+      </form>
+      <br><br><br>
+    	<h3>
+    	  Autres Informations
+    	</h3>
+      <form class="ui form" action="" method="post">
+          <div class="row">
+            <div class="input-field col l4">
+              <label for="">Heure d'arrivée</label>
+              <input type="time" name="heureArrivee" value="" required>
+            </div>
+          </div>
+          <div class="input-field col l12">
+            <label for="">Commentaire</label>
+            <textarea class="materialize-textarea" name="commentaire" rows="8" cols="80" required></textarea>
+          </div>
+          <button type="submit" class="btn waves-effect waves-light" name="button">Enregistrer</button>
+        </form>
+    </div>
+  </div>
+{% endblock %}

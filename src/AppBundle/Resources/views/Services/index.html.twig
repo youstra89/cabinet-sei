@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Nous vous proposons des services de qualité afin d'avoir un bon dossier pour vos études à l'international" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, services SEI" />
+{% endblock %}
+
+{% block title %}Services du cabinet SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos services</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des services à des coûts raisonnables</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row animatedParent">
+      <h2 class="header center animated growIn slow">Services du cabinet SEI</h2>
+    </div>
+    <div class="row animatedParent">
+      <p class="header center animated growIn slow">Les caratéristiques de nos services</p>
+    </div>
+    <div class="row animatedParent">
+      <div class="col xl3 l3 m6 s12 animated fadeIn slow">
+        <h3 class="header center animated bounceIn slow"><a class="waves-effect waves-light btn-large">Rapidité</a></h3>
+      </div>
+      <div class="col xl3 l3 m6 s12 animated fadeIn slow">
+        <h3 class="header center animated bounceIn slow"><a class="waves-effect waves-light btn-large">Fiabilité</a></h3>
+      </div>
+      <div class="col xl3 l3 m6 s12 animated fadeIn slow">
+        <h3 class="header center animated bounceInn slow"><a class="waves-effect waves-light btn-large">Ponctualité</a></h3>
+      </div>
+      <div class="col xl3 l3 m6 s12 animated fadeIn slow">
+        <h3 class="header center animated bounceInn slow"><a class="waves-effect waves-light btn-large">Fidélité</a></h3>
+      </div>
+    </div>
+    <div class="row animatedParent">
+      <div class="col s12 m2 l2"></div>
+      <div class="col s12 m8 l8 z-depth-3 animated growIn slow">
+        <div class="center-align">
+          <h3 class="header center animated fadeIn slow">Campus France</h3>
+          <p>Assistance pour constitution du dossier pour Campus France</p>
+          <p class="center"><a href="{{ path('service_dossier_campus_france') }}" class="btn waves-effect waves-light orange" title="Suivez le lien">Lire...</a></p><br>
+        </div>
+      </div>
+      <div class="col s12 m2 l2"></div>
+    </div>
+    <div class="row animatedParent">
+      <div class="col s12 m2 l2"></div>
+      <div class="col s12 m8 l8 z-depth-3 animated growIn slow">
+        <div class="center-align">
+          <h3 class="header center animated fadeIn slow">Candidature aux différentes universités</h3>
+          <p>Nous vous proposons aussi ce service; l'assistance pour la présentation de candidature dans les différentes universités internationales.</p>
+          <p class="center"><a href="{{ path('service_cadidature_universites') }}" class="btn waves-effect waves-light orange" title="Suivez le lien">Lire...</a></p><br>
+        </div>
+      </div>
+      <div class="col s12 m2 l2"></div>
+    </div>
+    <div class="row animatedParent">
+      <div class="col s12 m2 l2"></div>
+      <div class="col s12 m8 l8 z-depth-3 animated growIn slow">
+        <div class="center-align">
+          <h3 class="header center animated fadeIn slow">Acquisition de logement</h3>
+          <p>Trouver de bons logements, bien équipés pour votre séjour à l'étranger</p>
+          <p class="center"><a href="{{ path('service_logement') }}" class="btn waves-effect waves-light orange" title="Suivez le lien">Lire...</a></p><br>
+        </div>
+      </div>
+      <div class="col s12 m2 l2"></div>
+    </div>
+    <div class="row animatedParent">
+      <div class="col s12 m2 l2"></div>
+      <div class="col s12 m8 l8 z-depth-3 animated growIn slow">
+        <div class="center-align">
+          <h3 class="header center animated fadeIn slow">Obtention du visa</h3>
+          <p>On peut aussi vous aider pour l'obtention du visa dans votre pays de destination</p>
+          <p class="center"><a href="{{ path('service_dossier_visa') }}" class="btn waves-effect waves-light orange" title="Suivez le lien">Lire...</a></p><br>
+        </div>
+      </div>
+      <div class="col s12 m2 l2"></div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Faites vous aider pour la constitution de vos dossiers pour Campus France" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, services SEI, candidature Campus France, constitution des dossiers études internationales" />
+{% endblock %}
+
+{% block title %}Services SEI - Campus France{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos services</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des services à des coûts raisonnables</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2>Assistance pour la constitution du dossier Campus France</h2>
+      <center>
+        <a href="https://www.ivoire.campusfrance.org/" title="Visiter le site de Campus France"><img src="{{ asset('img/logos/campus_france.png') }}" alt=""></a>
+      </center>
+    </div>
+    <div class="row">
+      <p class="my-paragraphs my-alinea">
+        Le Cabinet SEI vous assiste dans la création de votre dossier
+        <a href="https://www.ivoire.campusfrance.org/" title="Visiter le site de Campus France">Campus France</a>, dans le remplissage des informations
+        clés et surtout dans le choix des universités. En effet, le choix des universités est fondamental pour la suite.
+        Il est nécessaire de bénéficier de conseils de personnes maitrisant parfaitement la géographie des universités
+        françaises afin de ne pas choisir certaines très sélectives ou surcotés ou aussi ne jouissant pas d’une très bonne
+        réputation. Cela, évidemment conditionnera votre acceptation ou votre refus. L’avis d’un expert en la matière est
+        plus qu’importante. Le Cabinet SEI avec son dense réseau en France vous fournira ce service.
+      </p>
+    </div>
+  </div>
+{% endblock %}

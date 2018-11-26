@@ -1,0 +1,72 @@
+{% trans_default_domain 'FOSUserBundle' %}{##}
+{% extends "::base.html.twig" %}
+
+
+{% block title %}Inscription SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Connexion à l'espace membre</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Créer votre compte gratuitement</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Inscrivez-vous</h2>
+      {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'col s12'}}) }}
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="">
+            {{ form_label(form.email, "E-mail", {'label_attr': {'class': ''}}) }} {{ form_errors(form.email) }}
+          </label>
+          {{ form_widget(form.email, {'attr': {'class': 'validate'}}) }}
+        </div>
+        <div class="input-field col s6">
+          <label for="">
+            {{ form_label(form.username, "Nom d'utilisateur", {'label_attr': {'class': ''}}) }} {{ form_errors(form.username) }}
+          </label>
+          {{ form_widget(form.username, {'attr': {'class': 'validate',}}) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="">
+            {{ form_label(form.plainPassword.first, "Mot de passe", {'label_attr': {'class': ''}}) }} {{ form_errors(form.plainPassword.first) }}
+          </label>
+          {{ form_widget(form.plainPassword.first, {'attr': {'class': 'validate'}}) }}
+        </div>
+        <div class="input-field col s6">
+          <label for="">
+            {{ form_label(form.plainPassword.second, "Répéter mot de passe", {'label_attr': {'class': ''}}) }} {{ form_errors(form.plainPassword.second) }}
+          </label>
+          {{ form_widget(form.plainPassword.second, {'attr': {'class': 'validate',}}) }}
+        </div>
+        <!--  -->
+      </div>
+      {{ form_widget(form) }}
+      <div>
+        <input type="submit" class="btn waves-effect waves-light" value="{{ 'registration.submit'|trans }}" />
+      </div>
+      {{ form_end(form) }}
+    </div>
+    <center>
+      <span style="font-size: 5em">Ou</span>
+    </center>
+    <div class="row">
+      <center>
+        <h2 class="header">Si vous avez déjà un compte</h2>
+        <a href="{{ path('fos_user_security_login') }}" class="btn waves-effect waves-light">
+          Connectez-vous en cliquant ici
+        </a>
+      </center>
+    </div>
+  </div>
+{% endblock %}

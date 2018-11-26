@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+  <meta name="description" content="Le Canada, l'un de nos pays de destination. Suivez avec nous comment y obtenir de la place pour vos études à l'étranger" />
+  <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, études à l'international, études au Canada, études en Amérique, universités canadiennes, universités internationales" />
+{% endblock %}
+
+{% block title %}Etudes au Canada - Cabinet SEI{% endblock %}
+
+{% block sidebar_color %}
+  <div class="ui teal vertical inverted sidebar menu">
+{% endblock %}
+
+{% block page_header_color %}
+  <div class="ui teal inverted vertical masthead center aligned segment">
+{% endblock %}
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Nos destinations</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Faites une visite virtuelle des pays que nous proposons</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <h1>Canada</h1>
+    <div class="row">
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ asset('img/nvo/sherbrooke6.jpg') }}" alt="Cabinet SEI - Université de Sherbrooke"> <!-- random image -->
+            <div class="caption center-align">
+              <h3>Etudiants</h3>
+              <h5 class="light grey-text text-lighten-3">Vie étudiante à l’université de Sherbrooke</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/nvo/universite_montreal3.jpg') }}" alt="Cabinet SEI - Cité universitaire de Montréal"> <!-- random image -->
+            <div class="caption left-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Découvez la splendide cité universitaire de Montréal</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/nvo/universite_laval_canada.jpg') }}" alt="Cabinet SEI - Université Laval"> <!-- random image -->
+            <div class="caption right-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Université Laval au Canada</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+          <p class="my-paragraphs my-alinea">
+            Le Canada, en particulier le Québec, est une destination très appréciée des étudiants étrangers francophones
+            depuis plus de deux décennies. Le système universitaire canadien organisé sur le même modèle qu’aux Etats Unis
+            offre des formations de très hautes qualités avec des coûts relativement moindres. Les campus y sont gigantesques
+            et bien équipés, les prestations de haute qualité et l'enseignement renommé. Les diplômes canadiens jouissent
+            d'une reconnaissance internationale, surtout dans les domaines des nouvelles technologies, des sciences exactes,
+            mais aussi des études océaniques, des ressources naturelles et de l'agriculture. Les diplômes délivrés s'échelonnent
+            sur trois niveaux : bachelor, master (maîtrise, au Québec) et PhD. Certaines entreprises américaines n’hésitent pas
+            à récruter sur les campus canadiens. Etudier au Canada presente plusieurs avantages pour les étudiants internationaux :
+            <ul style="'Open Sans Condensed', sans-serif; font-weight: 1.3em">
+              <li>Une excellence académique : une qualité du système reconnue internationnalement</li>
+              <li>Un rapport qualité/prix inégalé comparé au voisin américain pour un niveau de formation équivalent</li>
+              <li>Une pédagogie à l’anglo-saxone </li>
+              <li>La possibilité d’occuper un emploi ou de devenir résident permanent à l’obtention de son diplôme</li>
+              <li>
+                Un milieu de vie sécuritaire : le Canada est un pays politiquement stable et est reconnu pour sa quiétude,
+                ses valeurs de justice et son respect de l’individu. Le taux de criminalité est l’un des plus bas en Amérique du Nord
+              </li>
+              <li>
+                L’avantage linguistique : il est possible de vivre, travailler, et étudier en français tout en se familiarisant avec
+                l’anglais. De nombreux étudiants étrangers en profitent d’ailleurs pour suivre une formation intensive en anglais,
+                souvent à Montréal ou dans la partie anglophone, avant, pendant ou après leur programme d’études régulier.
+              </li>
+
+            </ul>
+          </p>
+        </div>
+    <div class="row">
+      <div class="slider">
+        <ul class="slides">
+          <li>
+            <img src="{{ asset('img/destinations/laval_1.jpg') }}" alt="Cabinet SEI - Université Laval"> <!-- random image -->
+            <div class="caption center-align">
+              <h3>Université</h3>
+              <h5 class="light grey-text text-lighten-3">Pavillon Alphonse-Marie-Parent - Université Laval<</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/destinations/laval_2.jpg') }}" alt="Cabinet SEI - Soccer masculin à Laval"> <!-- random image -->
+            <div class="caption left-align">
+              <h3>Divertissement</h3>
+              <h5 class="light grey-text text-lighten-3">Soccer masculin à Laval</h5>
+            </div>
+          </li>
+          <li>
+            <img src="{{ asset('img/destinations/sherbrooke1.jpg') }}" alt="Cabinet SEI - Université de Sherbrooke"> <!-- random image -->
+            <div class="caption right-align">
+              <h3>Etudiants</h3>
+              <h5 class="light grey-text text-lighten-3">Vie étudiante à l’université de Sherbrooke</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+          <p class="my-paragraphs my-alinea">
+          <p class="my-paragraphs my-alinea">
+            Les universités quebecoises offrent en général trois sessions de rentrée : les sessions d’hiver, d’été et d’automne.
+          </p>
+          <p class="my-paragraphs my-alinea">
+            Les universités Laval, UQAM, Montréal, Sherbrooke… jouissent d’une très bonne réputation au plan international.
+          </p>
+        </div>
+
+  </div>
+{% endblock %}

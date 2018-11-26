@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="google-site-verification" content="OI-k-btLm3GxUU2W-fmKCU7P8AHTlJomLlLgxwLhkZ8" />
+  <meta name="description" content="études à l'étranger, SEI, Cabiet SEI, études à l'international, études en France, au Maroc, Canada, aide dossier campus France" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/carousel.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/slider.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/ihover.css') }}">
+  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/components/icon.css') }}"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/components/flag.css') }}"> -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/carouseria.min.css') }}">
+  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+  <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+  <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+  <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+
+  <!-- Site Properties -->
+  <title>{% block title %}Bienvenue sur le site officiel du cabinet SEI{% endblock %}</title>
+
+  <style type="text/css">
+
+    body {
+      z-index: 1;
+    }
+
+    .my-paragraphs{
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 1.5em;
+    }
+
+    .my-alinea{
+      text-indent: 50px
+    }
+
+    .ui.message {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .fg-slider {
+      height: 500px;
+    }
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 100px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 1em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 2em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.menu .toc.item {
+      display: none;
+    }
+
+    /* .main.menu.fixed {
+      background-color: #FFFFFF;
+      border: 1px solid #DDD;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    } */
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.menu .item.el,
+      .secondary.menu .menu {
+        display: none;
+      }
+      .secondary.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 250px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+    .border{
+      border: none;
+    }
+
+
+    .ml2 {
+      font-weight: 900;
+      font-size: 3.5em;
+    }
+
+    .ml2 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Menu -->
+  {% block sidebar_color %}
+    <div class="ui green vertical inverted sidebar menu">
+  {% endblock %}
+    <div class="ui container">
+      <img src="{{ asset('img/logos/logoSEI.jpg') }}" class="ui image">
+    </div>
+    <a class="item" href="{{ path('homepage') }}">Accueil</a>
+    <a class="item" href="{{ path('about_us') }}">Qui sommes nous ?</a>
+    <div class="item">
+      <a href="{{ path('services') }}">Services</a>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="{{ path('service_dossier_campus_france') }}">Assistance constitution dossier Campus France</a>
+        <a class="item" href="{{ path('service_cadidature_universites') }}">Assistance candidature aux différentes universités</a>
+        <a class="item" href="{{ path('service_logement') }}">Aide dossier logement</a>
+        <a class="item" href="{{ path('service_dossier_visa') }}">Conseil dossier VISA</a>
+      </div>
+    </div>
+    <div class="item">
+      <a href="{{ path('countries') }}">Pays de destination</a>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="{{ path('france') }}"><i class="france flag"></i>France</a>
+        <a class="item" href="{{ path('belgique') }}"><i class="be flag"></i>Belgique</a>
+        <a class="item" href="{{ path('canada') }}"><i class="ca flag"></i>Canada</a>
+        <a class="item" href="{{ path('maroc') }}"><i class="ma flag"></i>Maroc</a>
+      </div>
+    </div>
+    <a class="item" href="{{ path('contact_us') }}">Contacts</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <div class="item">
+        {{ app.user.username }}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {% if is_granted('ROLE_ADMIN') %}
+            <a class="item" href="{{ path('panel_admin') }}">Admin Panel</a>
+          {% endif %}
+          <a class="item" href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+        </div>
+      </div>
+    {% else %}
+      <a class="item" href="{{ path('fos_user_security_login')}}">Connexion/Inscription</a>
+    {% endif %}
+  </div>
+
+  <!-- Page Contents -->
+  <div class="pusher">
+    {% block page_header_color %}
+      <div class="ui green inverted vertical masthead center aligned segment">
+    {% endblock %}
+      <div class="ui container">
+        <div class="ui large secondary inverted main menu border">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item el"  href="{{ path('homepage') }}">Accueil</a>
+          <a class="item el" href="{{ path('about_us') }}">Qui sommes nous ?</a>
+          <div class="ui dropdown item el">
+            <a href="{{ path('services') }}">Services</a>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a class="item" href="{{ path('service_dossier_campus_france') }}">Assistance constitution dossier Campus France</a>
+              <a class="item" href="{{ path('service_cadidature_universites') }}">Assistance candidature aux différentes universités</a>
+              <a class="item" href="{{ path('service_logement') }}">Aide dossier logement</a>
+              <a class="item" href="{{ path('service_dossier_visa') }}">Conseil dossier VISA</a>
+            </div>
+          </div>
+          <div class="ui dropdown item el">
+            <a href="{{ path('countries') }}">Pays de destination</a>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a class="item" href="{{ path('france') }}"><i class="france flag"></i>France</a>
+              <a class="item" href="{{ path('belgique') }}"><i class="be flag"></i>Belgique</a>
+              <a class="item" href="{{ path('canada') }}"><i class="ca flag"></i>Canada</a>
+              <a class="item" href="{{ path('maroc') }}"><i class="ma flag"></i>Maroc</a>
+            </div>
+          </div>
+          <a class="item el" href="{{ path('contact_us') }}">Contacts</a>
+          <div class="right item">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <div class="ui dropdown item">
+                {{ app.user.username }}
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  {% if is_granted('ROLE_ADMIN') %}
+                    <a class="item" href="{{ path('panel_admin') }}">Panel Admin</a>
+                  {% endif %}
+                  <a class="item" href="{{ path('my_account') }}">Mon compte</a>
+                  <a class="item" href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                </div>
+              </div>
+            {% else %}
+              <a class="ui inverted button" href="{{ path('fos_user_security_login')}}">Connexion/Inscription</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% block page_header %}
+        <div class="">
+          <h1 class="ui inverted header ml2">
+            Services d'Etudes Internationales
+          </h1>
+          <h2>Des experts à votre service pour vos études à l'étranger</h2>
+          <div class="ui huge positive button">Cheminons ensemble <i class="right arrow icon"></i></div>
+          <!-- <div class="ui shape">
+  <div class="sides">
+    <div class="ui header side active">Did you know? This side starts visible.</div>
+    <div class="ui header side">Help, its another side!</div>
+    <div class="ui header side">This is the last side</div>
+  </div>
+</div> -->
+<!-- <button type="button" id="shape">shape</button> -->
+        </div>
+      {% endblock %}
+    </div>
+
+    <!--  -->
+    {% set notif = app.session.flashbag.get('success') %}
+    {% if notif is not empty %}
+        <div class="ui green message">
+          <i class="close icon"></i>
+          <div class="header">{{ 'Succès'|trans }}:</div>
+          <ul class="list">
+            {% for message in notif %}
+            <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+    {% endif %}
+    {% for message in app.session.flashbag.get('warning') %}
+        <div class="ui orange message">
+          <i class="close icon"></i>
+          <div class="header">{{ 'Attention'|trans }} !!! </div>
+          <ul class="list">
+            <li>{{ message }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('error') %}
+        <div class="ui red message">
+          <i class="close icon"></i>
+          <div class="header">{{ 'Erreur'|trans }} !!! </div>
+          <ul class="list">
+            <li>{{ message }}</li>
+          </ul>
+        </div>
+    {% endfor %}
+
+    <!--  -->
+
+    {% block page_content %}
+      <div class="fg-slider" id="slider-1">
+        <div class="fg-content text-center">
+          <h3 class="ui inverted header">Des étudiants en séance de travail</h3>
+          <a href="#about-me" class="btn hover">
+            <i class="fa fa-angle-right" aria-hidden="true"></i> Source: Montpellier Business School- France
+          </a>
+        </div>
+        <img src="{{ asset('img/mbs_cafette.png') }}" alt="">
+        <div class="fg-content text-center">
+          <h3 class="ui inverted header">Sortie des étudiants après les cours</h3>
+          <a href="#about-me" class="btn hover">
+            <i class="fa fa-angle-right" aria-hidden="true"></i> Source: Montpellier Business School
+          </a>
+        </div>
+        <img src="{{ asset('img/mbs.jpg') }}" alt="">
+        <div class="fg-content text-center">
+          <h3 class="ui inverted header">Une splendide université</h3>
+          <a href="#about-me" class="btn hover">
+            <i class="fa fa-angle-right" aria-hidden="true"></i> Source: Université de Liège - Belgique
+          </a>
+        </div>
+        <img src="{{ asset('img/nvo/universite_liege_belgique.jpg') }}" alt="">
+        <div class="fg-content text-center">
+          <p></p>
+          <h3 class="ui inverted header">A la Bibliothèque</h3>
+          <a href="#about-me" class="btn hover">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>Source: Bibliothèque Universitaire de Rabat-Maroc
+          </a>
+        </div>
+        <img src="{{ asset('img/nvo/bibliotheque_universitaire_rabat.jpg') }}" alt="">
+        <div class="fg-content text-center">
+          <p></p>
+          <h3 class="ui inverted header">Des récipiendaires</h3>
+          <a href="#about-me" class="btn hover">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>Source: Université  de Montréal - Canada
+          </a>
+        </div>
+        <img src="{{ asset('img/nvo/universite_montreal.jpg') }}" alt="">
+      </div>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h3 class="ui header">Réaliser vos projets d’études à l’étranger en toute sérénité.</h3>
+              <p class="my-paragraphs">Le cabinet SEI vous accompagne dans vos procédures afin de vous assurer une réussite dans vos projets.</p>
+              <p class="my-paragraphs">Ma procédure d’études à l’étranger, c’est avec le cabinet SEI.</p>
+            </div>
+            <div class="six wide right floated column">
+              <img src="{{ asset('img/logos/logoSEI.jpg') }}" class="ui large rounded image">
+            </div>
+            <!-- .ci .org .com cabinet-sei.ci -->
+          </div>
+          <div class="ui hidden divider"></div>
+          <div class="ui hidden divider"></div>
+          <div class="ui hidden divider"></div>
+          <div class="row">
+            <div class="six wide right floated column">
+              <img src="{{ asset('img/destinations/maroc_1.jpg') }}" class="ui large bordered rounded image">
+            </div>
+            <div class="eight wide column">
+              <h3 class="ui header">Tous services inclus...</h3>
+              <p class="my-paragraphs">De la constitution de vos dossiers au début des cours, sans oublier l'acquisition de logement pendant votre séjour</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui vertical stripe segment">
+        <div class="ui text container">
+          <h3 class="ui header">Partez à la découverte de nouveaux horizons</h3>
+          <p class="my-paragraphs">Découvrez le monde extérieur. Voyagez pour apprendre dans les grandes universités internationales</p>
+          <a class="ui large button">Lire...</a>
+        </div>
+      </div>
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="container">
+              <h2 class="ui center aligned icon header">
+                <i class="circular users icon"></i>
+                Actualités et témoignages
+              </h2>
+            </div>
+          </div>
+          <div class="ui link cards">
+            {% for article in articles %}
+              <div class="card">
+                <div class="image">
+                  {% if article.img is empty %}
+                    <img src="{{ asset('img/destinations/maroc_1.jpg') }}" alt="maroc">
+                  {% else %}
+                    <img src="{{ asset('uploads/supports/' ~ article.img) }}" alt="maroc">
+                  {% endif %}
+                </div>
+                <div class="content">
+                  <div class="header"><a href="#" class="inverted">{{ article.title }}</a></div>
+                  <div class="meta">
+                    <a>{{ article.articleType }}</a>
+                  </div>
+                  <div class="description">
+                    {{ article.description }}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{ path('lire_article', {'id': article.id}) }}" class="ui small teal button">Lire...</a>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">
+                    {{ article.datePublished|date('d-m-Y') }}
+                  </span>
+                  <span>
+                    <i class="user icon"></i>
+                    {{ article.user.username }}
+                  </span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+  <footer>
+    <div class="ui green inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">Menu</h4>
+            <div class="ui inverted link list">
+              <a href="{{ path('homepage') }}" class="item">Accueil</a>
+              <a href="{{ path('about_us') }}" class="item">Qui sommes nous ?</a>
+              <a href="{{ path('services') }}" class="item">Services</a>
+              <a href="{{ path('countries') }}" class="item">Destinations</a>
+            </div>
+          </div>
+          <div class="five wide column">
+            <h4 class="ui inverted header">Services</h4>
+            <div class="ui inverted link list">
+              <a class="item" href="{{ path('service_dossier_campus_france') }}">Assistance constitution dossier Campus France</a>
+              <a class="item" href="{{ path('service_cadidature_universites') }}">Assistance candidature aux différentes universités</a>
+              <a class="item" href="{{ path('service_logement') }}">Aide dossier logement</a>
+              <a class="item" href="{{ path('service_dossier_visa') }}">Conseil dossier VISA</a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Contacts</h4>
+            <div class="ui inverted link list">
+              <a class="item"><i class="phone icon"></i>&nbsp;00225 59 17 30 00</a>
+              <a class="item"><i class="envelope outline icon"></i>&nbsp;info@cabinet-sei.ci</a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Liens utiles</h4>
+            <div class="ui list inverted">
+              <div class="item"><a href="https://www.ivoire.campusfrance.org/">Campus France</a></div>
+              <div class="item"><a href="https://ci.ambafrance.org/Demander-un-visa-pour-la-France-en">Demande VISA France</a></div>
+              <div class="item"><a href="https://www.canadainternational.gc.ca">Ambassade du Canada</a></div>
+              <div class="item"><a href="http://www.bourses.enseignement.gouv.ci/">Direction des bourses - CI</a></div>
+              <div class="item"><a href="http://www.vfsglobal.ca/Canada/cotedivoire/">Informations VISA Canada </a></div>
+              <div class="item"><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/etudier-canada.html">Etudes au Canada </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="column">
+            <center><h3 class="ui inverted header">Vous pouvez aussi nous suivre sur </h3></center>
+            <br>
+            <center>
+              <a class="ui circular facebook massive icon button" href="https://web.facebook.com/pg/CabinetSEI" title="Suivez-nous sur Facebook">
+                <i class="facebook icon"></i>
+              </a>
+              <!-- <a class="ui circular twitter massive icon button" href="" title="Suivez-nous sur Twitter">
+                <i class="twitter icon"></i>
+              </a> -->
+              <a class="ui circular linkedin massive icon button" href="https://www.linkedin.com/in/cabinet-sei-0997a2174/" title="Suivez-nous sur LinkedIn">
+                <i class="linkedin icon"></i>
+              </a>
+              <!-- <a class="ui circular google plus massive icon button" href="" title="Suivez-nous sur Google+">
+                <i class="google plus icon"></i>
+              </a> -->
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {% block javascripts %}
+    <script src="{{ asset('js/ihover.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('js/carouseria.min.js') }}"></script>
+    <script src="{{ asset('css/semantic.js') }}"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
+    <script src="{{ asset('js/slidr.min.js') }}"></script>
+    <script src="{{ asset('js/velocity.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.3/velocity.ui.min.js"></script>
+    <!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script> -->
+    <script>
+        new FgSlider('slider-1', {
+            autoplay: true, // autoplay on / off
+            effect: 'slide', // fade, scale, slide, slide-top
+            duration: 5000, // duration till the next slide
+            bullets: true, // show / hide bullets
+        });
+    </script>
+    <script>
+        // CÓDIGO DE INICIALIZAÇÃO DO CAROUSEL
+        // setCarousel("250px true vertical false true true");
+        setCarousel("30em true horizontal true|2500 true true");
+
+        // CÓDIGO PARA CUSTOMIZAÇÃO NA PÁGINA 'INDEX' APENAS
+        function contCheck(){setTimeout(()=>{var e=document.getElementById("carouseria").querySelector('[count="0"]'),
+        t=document.getElementById("carouseria").querySelector('[count="1"]');e.style.opacity>0?(document.getElementById("c2_1")
+        .disabled=!0,document.getElementById("c2_2").disabled=!0,document.getElementById("c1_1").disabled=!1,
+        document.getElementById("c1_2").disabled=!1):t.style.opacity>0?(document.getElementById("c1_1").disabled=!0,
+        document.getElementById("c1_2").disabled=!0,document.getElementById("c2_1").disabled=!1,document.getElementById("c2_2")
+        .disabled=!1):(document.getElementById("c1_1").disabled=!0,document.getElementById("c1_2").disabled=!0,
+        document.getElementById("c2_1").disabled=!0,document.getElementById("c2_2").disabled=!0)},300)}contCheck();
+        function evenLis(){for(var c=0;c<indexContentChild.length;c++)indexContentChild[c].addEventListener("click",
+        ()=>{contCheck()});for(var d=0;d<navContent.querySelectorAll('span').length;d++)navContent.querySelectorAll('span')[d]
+        .addEventListener("click",()=>{contCheck()})}evenLis();function setForm(){var formItems={};var formShort=document
+        .getElementById("tweakForm").elements;var queryline;for(var g=0;g<formShort.length;g++){if(formShort[g].name!="")
+        formItems[formShort[g].name]=formShort[g].value}queryline=formItems.contHeight+formItems.contUnit+" ";queryline+=formItems.loopTf+" ";
+        queryline+=formItems.movementDir+" ";queryline+=formItems.autoplayTf;queryline+=(formItems.autoplayTf=="true")?
+        "|"+formItems.autoplayMilisec+" ":" ";queryline+=formItems.indexTf;queryline+=(formItems.indexTf=="true" && formItems.indexDir!="horizontal")?
+        "|"+formItems.indexDir+" ":" ";queryline+=formItems.navTf;queryline+=(formItems.navTf=="true" && formItems.navDir!="horizontal")?
+        "|"+formItems.navDir+" ":"";document.getElementById("SHOWQUERY").innerHTML="setCarousel(\""+queryline+"\")";setCarousel(queryline)}
+        function resetForm(){document.getElementById("tweakForm").reset();}resetForm();
+    </script>
+    <script>
+    $(document)
+      .ready(function() {
+
+        setInterval(function(){
+          $('.shape').shape('flip down');
+        }, 3500);
+
+        // fix menu when passed
+        $('.masthead')
+          .visibility({
+            once: false,
+            onBottomPassed: function() {
+              $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function() {
+              $('.fixed.menu').transition('fade out');
+            }
+          })
+        ;
+
+        // Fermeture des messages (notifications)
+        $('.message .close')
+          .on('click', function() {
+            $(this)
+              .closest('.message')
+              .transition('fade')
+            ;
+          })
+        ;
+
+        // Onglet dans la page "Mon compte"
+        $('.menu .item')
+          .tab()
+        ;
+
+        // create sidebar and attach to menu open
+        $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+        ;
+
+        // Affiche une fenêtre modal pour la connexion ou pour l'inscription
+        $('.ui.inverted.button').on('click', function(){
+          $('.ui.modal')
+            .modal('show')
+          ;
+        });
+
+        // Menu dropdown
+        $('.ui.menu .ui.dropdown').dropdown({
+          on: 'hover'
+        });
+        $('.ui.menu a.item')
+          .on('click', function() {
+            $(this)
+              .addClass('active')
+              .siblings()
+              .removeClass('active')
+            ;
+          })
+        ;
+
+        // Pour le changement de date dans la fixation de rendez-Vous
+        $("#date").on("change", function(){
+          var dateRdv = $(this).val();
+          var select = document.getElementById("heure");
+
+          var heures = ["08h - 09h", "09h - 10h", "10h - 11h", "11h - 12h", "14h - 15h", "15h - 16h", "16h - 17h"];
+          select.length = 0;
+          console.log(heures);
+
+          $.ajax({
+            url: Routing.generate('heures_rdv_dispo', { dateRdv: dateRdv }, true),
+            type: 'GET',
+            success: function (result) {
+              // console.log(result);
+              // var dataJSON = JSON.parse(result);
+              result.forEach(function(value, index, array) {
+                // heures.splice(value, 1)
+                heures.splice(heures.indexOf(value.heure), 1);
+              });
+
+              // console.log("reste heures ");
+              // console.log(heures);
+              // heures.forEach(function(y) {
+              //   var option = document.createElement("option");
+              //   option.value = heures[y]
+              //   option.text = y;
+              //   select.add(option, select[y]);
+              // })
+              for(var k in heures) {
+                var option = document.createElement("option");
+                option.value = heures[k];
+                option.text = heures[k];
+                select.add(option, select[k]);
+              }
+            },
+            error: function (xhr, status, error) {
+              console.log(error)
+            }
+          });
+        })
+      });
+
+      // Wrap every letter in a span
+    $('.ml2').each(function(){
+      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+      })
+      .add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5be20f6870ff5a5a3a70f673/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+  {% endblock %}
+</body>
+
+</html>

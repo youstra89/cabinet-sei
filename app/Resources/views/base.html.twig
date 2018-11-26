@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="google-site-verification" content="OI-k-btLm3GxUU2W-fmKCU7P8AHTlJomLlLgxwLhkZ8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  {% block meta %}
+    <meta name="description" content="Bienvenu sur le site du cabinet SEI, expert dans l'assistance pour les études à l'étranger" />
+    <meta name="keywords" lang="fr" content="SEI, Cabiet SEI, études à l'international, études en europe, études en Amérique, études en Afrique du nord, études au maghreb" />
+  {% endblock %}
+
+  {% block js %}
+  {% endblock %}
+  <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+  <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+  <title>{% block title %}Bienvenue sur le site officiel du cabinet SEI{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ asset('scroll-animate/css/animations.css') }}">
+  <link rel="stylesheet" href="{{ asset('scroll-animate/example-assets/style.css') }}">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="{{ asset('materialize/css/style.css') }}s" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style media="screen">
+    .my-paragraphs{
+      text-align: justify;
+      font-size: 1.1em;
+    }
+
+    .my-alinea{
+      /* text-indent: 50px */
+    }
+
+    .fa {
+      padding: 10px;
+      font-size: 20px;
+      width: 40px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+    }
+
+    .msg{
+      width: 100%;
+      border: 0px;
+      padding: 10px;
+      margin: 20px;
+      color: grey
+    }
+
+    .msg-title{
+      color: white;
+      font-weight: bold;
+    }
+
+    .msg-success{
+      border-color: #0288d1;
+      background-color: #8bc34a;
+      color: white;
+      z-index: 2;
+    }
+
+    .msg-warning{
+      border-color: #ef6c00;
+      background-color: #ffab40;
+      color: white;
+      z-index: 2;
+    }
+
+    .msg-error{
+      border-color: #d32f2f;
+      background-color: #ff8a65;
+      color: white;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  {% block main_menu %}
+    <nav class="orange lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+          <!-- <img src="" width="1%" height="1%" alt="Le logo du cabinet SEI"> -->
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ path('homepage') }}">Accueil</a></li>
+          <li><a href="{{ path('about_us') }}">Qui sommes-nous ?</a></li>
+          <li>
+            <a href="{{ path('services') }}" class='dropdown-trigger' data-target='dropdown1'>Services proposés</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="{{ path('service_dossier_campus_france') }}">Assistance constitution dossier Campus France</a></li>
+              <li><a href="{{ path('service_cadidature_universites') }}">Assistance canditature différentes université</a></li>
+              <li><a href="{{ path('service_logement') }}">Aide dossier logement</a></li>
+              <li><a href="{{ path('service_dossier_visa') }}">Conseils dossier visa</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ path('countries') }}" class='dropdown-trigger' data-target='dropdown2'>Pays de destination</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown2' class='dropdown-content'>
+              <li><a href="{{ path('france') }}">France&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+              <li><a href="{{ path('belgique') }}">Belgique</a></li>
+              <li><a href="{{ path('canada') }}">Canada</a></li>
+              <li><a href="{{ path('maroc') }}">Maroc</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ path('contact_us') }}">Contact</a></li>
+          <li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <a class='dropdown-trigger' data-target='dropdown3'>{{ app.user.username }}</a>
+              <!-- Dropdown Structure -->
+              <ul id='dropdown3' class='dropdown-content'>
+                {% if is_granted('ROLE_ADMIN') %}
+                  <li><a href="{{ path('panel_admin') }}">Panel Admin</a></li>
+                {% endif %}
+                <li><a href="{{ path('my_account') }}">Mon compte</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+              </ul>
+            {% else %}
+              <ul>
+                <li><a href="{{ path('fos_user_security_login')}}">Se connecter</a></li>
+              </ul>
+            {% endif %}
+          </li>
+        </ul>
+        <ul id="slide-out" class="sidenav collapsible">
+          <li>
+            <div class="user-view">
+              <div class="background">
+                <img src="{{ asset('img/destinations/ulb_1.jpg') }}">
+              </div>
+              {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a><img class="circle" src="{{ asset('img/destinations/maroc_1.jpg') }}"></a>
+                <a href="{{ path('my_account') }}"><span class="white-text name">Mon compte</span></a>
+                <a><span class="white-text email">{{ app.user.email }}</span></a>
+                {% if is_granted('ROLE_ADMIN') %}
+                  <a href="{{ path('panel_admin') }}"><span class="white-text email">Panel Admin</span></a>
+                  <a href="{{ path('fos_user_security_logout') }}"><span class="white-text email">Déconnexion</span></a>
+                {% endif %}
+              {% else %}
+                <a><img class="circle" src="{{ asset('img/destinations/maroc_1.jpg') }}"></a>
+              {% endif %}
+            </div>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a href="{{ path('homepage') }}" class="collapsible-header waves-effect waves-teal">Accueil</a>
+                <div class="collapsible-body">
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a href="{{ path('about_us') }}" class="collapsible-header waves-effect waves-teal">Qui sommes-nous ?</a>
+                <div class="collapsible-body">
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a href="{{ path('services') }}" class="collapsible-header waves-effect waves-teal">Services proposés</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a class="truncate" href="{{ path('service_dossier_campus_france') }}">Assistance constitution dossier Campus France</a></li>
+                    <li><a class="truncate" href="{{ path('service_cadidature_universites') }}">Assistance canditature différentes université</a></li>
+                    <li><a class="truncate" href="{{ path('service_logement') }}">Aide dossier logement</a></li>
+                    <li><a class="truncate" href="{{ path('service_dossier_visa') }}">Conseils dossier visa</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a  href="{{ path('countries') }}" class="collapsible-header waves-effect waves-teal">Pays de destination</a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="{{ path('france') }}">France</a></li>
+                    <li><a href="{{ path('belgique') }}">Belgique</a></li>
+                    <li><a href="{{ path('canada') }}">Canada</a></li>
+                    <li><a href="{{ path('maroc') }}">Maroc</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li class="bold"><a href="{{ path('contact_us') }}" class="collapsible-header waves-effect waves-teal">Contact</a>
+                <div class="collapsible-body">
+                </div>
+              </li>
+            </ul>
+          </li>
+          {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="{{ path('fos_user_security_login')}}" class="collapsible-header waves-effect waves-teal">Se connecter</a>
+                  <div class="collapsible-body">
+                  </div>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  {% endblock %}
+  <div class="container" style="z-index: 1">
+    {% for message in app.session.flashbag.get('success') %}
+      <div class="msg msg-success z-depth-1" id="message">
+        <span class="msg-title">Succès<i class="material-icons right closeMsg">close</i></span>
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('warning') %}
+      <div class="msg msg-warning z-depth-1" id="message">
+        <span class="msg-title">Attention!!!<i class="material-icons right closeMsg">close</i></span>
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('error') %}
+      <div class="msg msg-error z-depth-1" id="message">
+        <span class="msg-title">Erreur<i class="material-icons right closeMsg">close</i></span>
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% block page_header %}
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <h1 class="header center orange-text">Services d'Etudes Internationales</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Des experts à votre service pour vos études à l'étranger</h5>
+        </div>
+        <div class="row center">
+          <a href="{{ path('rdv') }}" class="btn-large waves-effect waves-light orange">Cheminons ensemble</a>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block page_content %}
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="{{ asset('img/mbs_cafette.png') }}" alt=""> <!-- random image -->
+          <div class="caption center-align">
+            <h3>Des étudiants en séance de travail</h3>
+            <h5 class="light grey-text text-lighten-3">Source: Montpellier Business School- France</h5>
+          </div>
+        </li>
+        <li>
+          <img src="{{ asset('img/mbs.jpg') }}" alt=""> <!-- random image -->
+          <div class="caption left-align">
+            <h3>Sortie des étudiants après les cours</h3>
+            <h5 class="light grey-text text-lighten-3"> Source: Montpellier Business School</h5>
+          </div>
+        </li>
+        <li>
+          <img src="{{ asset('img/nvo/universite_liege_belgique.jpg') }}" alt=""> <!-- random image -->
+          <div class="caption right-align">
+            <h3>Une splendide université</h3>
+            <h5 class="light grey-text text-lighten-3">Source: Université de Liège - Belgique</h5>
+          </div>
+        </li>
+        <li>
+          <img src="{{ asset('img/nvo/bibliotheque_universitaire_rabat.jpg') }}" alt=""> <!-- random image -->
+          <div class="caption center-align">
+            <h3>A la Bibliothèque</h3>
+            <h5 class="light grey-text text-lighten-3">Source: Bibliothèque Universitaire de Rabat-Maroc</h5>
+          </div>
+        </li>
+        <li>
+          <img src="{{ asset('img/nvo/universite_montreal.jpg') }}" alt=""> <!-- random image -->
+          <div class="caption center-align">
+            <h3>Des récipiendaires</h3>
+            <h5 class="light grey-text text-lighten-3">Source: Université  de Montréal - Canada</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="section">
+        <h2 class="center orange-text">Prenez votre élan avec le cabinet SEI</h2>
+      </div>
+      <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m12 l4 xl4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text"><i class="large material-icons">flash_on</i></h2>
+              <h5 class="center">Réaliser vos projets d’études à l’étranger en toute sérénité.</h5>
+
+              <p class="light">
+                Le cabinet SEI vous accompagne dans vos procédures afin de vous assurer une réussite dans vos projets.
+              </p>
+              <p class="light">
+                Ma procédure d’études à l’étranger, c’est avec le cabinet SEI.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l4 xl4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text"><i class="large material-icons">group</i></h2>
+              <h5 class="center">Tous services inclus...</h5>
+
+              <p class="light">
+                De la constitution de vos dossiers au début des cours, sans oublier l'acquisition de logement pendant votre séjour
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l4 xl4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text"><i class="large material-icons">settings</i></h2>
+              <h5 class="center">Partez à la découverte de nouveaux horizons</h5>
+
+              <p class="light">Découvrez le monde extérieur. Voyagez pour apprendre dans les grandes universités internationales</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br><br>
+    </div>
+    <div class="container">
+      <div class="row">
+        <h1 class="header center orange-text">Actualités et témoignages</h1>
+      </div>
+      <div class="row">
+        {% for article in articles %}
+          <div class="col l4 m6 s12">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                {% if article.img is empty %}
+                  <img src="{{ asset('img/destinations/maroc_1.jpg') }}" alt="maroc">
+                {% else %}
+                  <img src="{{ asset('uploads/supports/' ~ article.img) }}" alt="maroc">
+                {% endif %}
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ article.title }}<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">{{ article.articleType }}</a></p>
+                <p>Date de publication: <i>{{ article.datePublished|date('d-m-Y à H:i') }}</i></p>
+                <p>Par: {{ article.user.username }}</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ article.title }}<i class="material-icons right">close</i></span>
+                <p>{{ article.description }}</p>
+                <p><a href="{{ path('lire_article', {'id': article.id}) }}" class="waves-effect waves-light btn-small">Lire...</a></p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="row center">
+        <div class="col">
+          <a href="{{ path('tous_les_articles') }}" class="btn-large waves-effect waves-light green">Voir tous les articles</a>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block footer %}
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l3 s12">
+            <h5 class="white-text">Menu</h5>
+            <ul>
+              <li><a href="{{ path('homepage') }}" class="white-text">Accueil</a></li>
+              <li><a href="{{ path('about_us') }}" class="white-text">Qui sommes nous ?</a></li>
+              <li><a href="{{ path('services') }}" class="white-text">Services</a></li>
+              <li><a href="{{ path('countries') }}" class="white-text">Destinations</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Services</h5>
+            <ul>
+              <li><a class="white-text" href="{{ path('service_dossier_campus_france') }}">Constitution dossier Campus France</a></li>
+              <li><a class="white-text" href="{{ path('service_cadidature_universites') }}">Candidature aux différentes universités</a></li>
+              <li><a class="white-text" href="{{ path('service_logement') }}">Aide dossier logement</a></li>
+              <li><a class="white-text" href="{{ path('service_dossier_visa') }}">Conseil dossier VISA</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Contact</h5>
+            <ul>
+              <li><a class="white-text"><i class="phone icon"></i>&nbsp;00225 59 17 30 00</a></li>
+              <li><a class="white-text" href="mailto:info@cabinet-sei.ci"><i class="envelope outline icon"></i>&nbsp;info@cabinet-sei.ci</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Liens utiles</h5>
+            <ul>
+              <li><a  class="white-text" href="https://www.ivoire.campusfrance.org/">Campus France</a></li>
+              <li><a  class="white-text" href="https://ci.ambafrance.org/Demander-un-visa-pour-la-France-en">Demande VISA France</a></li>
+              <li><a  class="white-text" href="https://www.canadainternational.gc.ca">Ambassade du Canada</a></li>
+              <li><a  class="white-text" href="http://www.bourses.enseignement.gouv.ci/">Direction des bourses - CI</a></li>
+              <li><a  class="white-text" href="http://www.vfsglobal.ca/Canada/cotedivoire/">Informations VISA Canada </a></li>
+              <li><a  class="white-text" href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/etudier-canada.html">Etudes au Canada </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row center">
+          <h5>Suivez-nous aussi</h5>
+          <a href="https://web.facebook.com/pg/CabinetSEI" title="Suivez-nous sur Facebook" class="fa fa-facebook"></a>
+          <a href="https://www.linkedin.com/in/cabinet-sei-0997a2174/" title="Suivez-nous sur LinkedIn" class="fa fa-linkedin"></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          © Cabinet SEI
+        </div>
+      </div>
+    </footer>
+  {% endblock %}
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{ asset('scroll-animate/js/css3-animate-it.js') }}"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ asset('materialize/js/init.js') }}"></script>
+  <script>
+    $(document).ready(function(){
+      // Ce code c'est pour le menu principal (le dropdown)
+      $('.dropdown-trigger').dropdown({
+        inDuration: 500,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        hover: true, // Activate on hover
+        gutter: 0, // Spacing from edge
+        coverTrigger: false, // Displays dropdown below the button
+        alignment: 'left', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false, // Stops event propagation
+        constrainWidth: false
+      });
+
+      // Pour la Sidenav
+      $('.sidenav').sidenav();
+
+      // Pour l'effet d'accordeon dans la Sidenav
+      $('.collapsible').collapsible();
+
+      // Pour le slider de la page d'accueil
+      $('.slider').slider({
+        duration: 1000,
+        interval: 2000
+      });
+
+      // Pour fermer le notifications
+      $('.closeMsg').on('click', function(){
+        $('#message').fadeOut(500)
+      });
+
+      // Pour le select du formulaire
+      $('select').formSelect();
+
+      // Pour le bouton flottant dans les Articles
+      $('.fixed-action-btn').floatingActionButton();
+
+      // Pour l'activation des tooltip
+      $('.tooltipped').tooltip();
+
+      // Initialisation scrollspy
+      $('.scrollspy').scrollSpy();
+
+      // Pour le changement de date dans la fixation de rendez-Vous
+      $("#date").on("change", function(){
+        var dateRdv = $(this).val();
+        var select = document.getElementById("heure");
+
+        var heures = ["08h - 09h", "09h - 10h", "10h - 11h", "11h - 12h", "14h - 15h", "15h - 16h", "16h - 17h"];
+        select.length = 0;
+        console.log(heures);
+
+        $.ajax({
+          url: Routing.generate('heures_rdv_dispo', { dateRdv: dateRdv }, true),
+          type: 'GET',
+          success: function (result) {
+            result.forEach(function(value, index, array) {
+              heures.splice(heures.indexOf(value.heure), 1);
+            });
+
+            for(var k in heures) {
+              var option = document.createElement("option");
+              option.value = heures[k];
+              option.text = heures[k];
+              select.add(option, select[k]);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.log(error)
+          }
+        });
+      })
+    });
+  </script>
+  <!--Start of Tawk.to Script-->
+  <script>
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/5be20f6870ff5a5a3a70f673/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+  </body>
+</html>

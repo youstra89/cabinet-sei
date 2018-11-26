@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Rendez-vous | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Les rendez-vous</h2>
+    </div>
+    <div class="row">
+      <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Nom & prénoms</th>
+              <th>email</th>
+              <th>Date</th>
+              <th>Heure</th>
+              <th>Sujet</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set n = 0 %}
+            {% for r in rdv %}
+              {% set n = n + 1 %}
+              <tr>
+                <td>{{ n }}</td>
+                <td>{{ app.user.nom }} {{ app.user.pnom }}</td>
+                <td>{{ app.user.email }}</td>
+                <td>{{ r.dateRdv|date("d-m-Y") }}</td>
+                <td>{{ r.heure }}</td>
+                <td>{{ r.subject }}</td>
+                <td>
+                  <a href="{{ path('voir_rdv', {'id': r.id}) }}" class="tooltiped" data-position="top" data-tooltip="Allez au rendez-vous">
+                    <i class="material-icons">view_list</i>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+{% endblock %}

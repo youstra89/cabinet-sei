@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Archive des articles | SEI{% endblock %}
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ path('panel_admin') }}" class="large btn waves-effect waves-light orange"><i class="plus icon"></i> Retour au Panel Admin</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Outils de gestion</h2>
+      <a href="{{ path('articles') }}" class="circular ui icon positive button" title="Retour au Panel Admin">
+        <i class="arrow alternate circle left outline icon"></i>
+      </a>
+    </div>
+    <div class="row">
+      <!-- <div class="ui equal width aligned stackable padded grid"> -->
+        <h3>Les articles archivés</h3>
+        <a href="{{ path('articles') }}" class="btn waves-effect waves-light blue"><i class="plus icon"></i> Revenir aux articles</a>
+        <br><br>
+        <div class="column">
+          <table class="highlight">
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>Rédacteur</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Publié</th>
+                <th>Archivé le</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% set numero = 0 %}
+              {% for article in articles %}
+                {% set numero = numero + 1 %}
+                {% set color = '' %}
+                <tr style="font-weight: {{ color }};">
+                  <td>{{ numero }}</td>
+                  <td>{{ article.user.username }}</td>
+                  <td>{{ article.title }}</td>
+                  <td>{{ article.description }}</td>
+                  {% if article.publited == FALSE %}
+                    <td>
+                      <p style="font-size: 1em">Non</p>
+                    </td>
+                  {% else %}
+                    <td data-tooltip="Publé le {{ article.datePublished|date('d-m-Y') }}">
+                      <p style="font-size: 1em">Oui</p>
+                    </td>
+                  {% endif %}
+                  <td>
+                    {% if article.dateUpdate == article.dateSave %}
+                      <p style="font-size: 1em">Jamais modifié</p>
+                    {% else %}
+                      {{ article.dateUpdate|date('d-m-Y') }} <b>à</b> {{ article.dateUpdate|date('H:i') }}
+                    {% endif %}
+                  </td>
+                  <td>
+                    <a href="{{ path('voir_article', {'id': article.id}) }}" data-tooltip="Voir cet article" class="tooltipped" data-position="top"><i class="tiny material-icons">insert_drive_file</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+{% endblock %}

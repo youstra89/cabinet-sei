@@ -1,0 +1,16 @@
+http://cabinet-sei.ci/
+http://cabinet-sei.ci/services
+http://cabinet-sei.ci/services/assistance-constitution-dossier-campus-france
+http://cabinet-sei.ci/services/assistance-candidature-universites
+http://cabinet-sei.ci/services/aide-dossier-logement
+http://cabinet-sei.ci/services/conseils-dossier-visa
+http://cabinet-sei.ci/countries
+http://cabinet-sei.ci/pays-destination/france
+http://cabinet-sei.ci/pays-destination/belgique
+http://cabinet-sei.ci/pays-destination/canada
+http://cabinet-sei.ci/pays-destination/maroc
+http://cabinet-sei.ci/contact
+http://cabinet-sei.ci/login
+http://cabinet-sei.ci/about
+http://cabinet-sei.ci/resetting/request
+http://cabinet-sei.ci/register/

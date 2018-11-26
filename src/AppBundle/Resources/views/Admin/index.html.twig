@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Panel Admin | SEI{% endblock %}
+
+
+
+{% block page_header %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Panneau d'administration</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+<div class="container">
+  <div class="row">
+    <h2 class="ui header">Outils de gestion</h2>
+  </div>
+  <div class="row">
+    <div class="collection">
+      <a href="{{ path('messages') }}" class="collection-item"><span class="new badge">{{ msgNonLus }}</span>Messages reçus</a>
+      <a href="{{ path('membres') }}" class="collection-item"><span class="new badge">{{ nbrUsers }}</span>Nombre de membres</a>
+      <a href="{{ path('tous_les_rdv') }}" class="collection-item"><span class="new badge">{{ nbrRdv }}</span>Nombre de rendez-vous</a>
+      <a href="{{ path('articles') }}" class="collection-item"><span class="new badge">{{ articles }}</span>Articles</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

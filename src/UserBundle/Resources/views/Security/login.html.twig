@@ -1,0 +1,62 @@
+{% extends "::base.html.twig" %}
+
+
+{% block title %}Connexion | SEI{% endblock %}
+
+
+{% block page_header %}
+  {% if error %}
+  <div class="alert alert-danger">
+    {{ error.messageKey }}
+  </div>
+  {% endif %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Connexion à l'espace membre</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Des experts à votre service pour vos études à l'étranger</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block page_content %}
+  <div class="container center">
+    <h2 class="ui header">Connectez vous</h2>
+    <form class="col s12" action="{{ path('fos_user_security_check') }}" method="post">
+      <div class="row">
+        <div class="col s12 m4 l4"></div>
+        <div class="input-field col s12 m4 l4">
+          <input type="text" id="username" name="_username" class="validate" value="{{ last_username }}" required/>
+          <label for="username">Nom d'utilisateur</label>
+        </div>
+        <div class="col s12 m4 l4"></div>
+      </div>
+      <div class="row">
+        <div class="col s12 m4 l4"></div>
+        <div class="input-field col s12 m4 l4">
+          <input type="password" id="password" name="_password" class="validate" value="{{ last_username }}" required/>
+          <label for="password">Mot de passe</label>
+          <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié ?</a>
+        </div>
+        <div class="col s12 m4 l4"></div>
+      </div>
+      <div class="row">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+        <button class="btn waves-effect waves-light orange">Se connecter
+        </button>
+      </div>
+    </form>
+    <center>
+      <span style="font-size: 5em">Ou</span>
+    </center>
+  	<h2 class="ui header">Inscrivez vous si vous n'avez pas de compte</h2>
+    <center>
+    	<a href="{{ path('fos_user_registration_register') }}" class="btn waves-effect waves-light">
+    	  Créez votre compte
+    	</a>
+    </center>
+    <br><br><br>
+  </div>
+{% endblock %}

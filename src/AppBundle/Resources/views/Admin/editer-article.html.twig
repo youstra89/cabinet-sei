@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+
+{% block js %}
+  <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+{% endblock %}
+
+
+{% block title %}Edition Article | SEI{% endblock %}
+
+
+{% block page_header %}
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h1 class="header center orange-text">Panneau d'administration</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">Espace réservé uniquement aux administrateurs</h5>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <h2 class="ui header">Outils de gestion</h2>
+        <a href="{{ path('articles') }}" class="btn-floating btn-large cyan pulse"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <div class="row">
+      <h2>Edition d'un acticle</h2>
+    </div>
+    <div class="row">
+      <div class="form-group">
+          {{ form_start(form, {'attr': {'class': 'col s12'}}) }}
+      			<div class="row">
+      				<div class="input-field col l6 s12">
+      					<label for="">
+      						{{ form_label(form.title) }}
+      						{{ form_errors(form.title) }}
+      					</label> {{ form_widget(form.title) }}
+      				</div>
+      				<div class="input-field col l6 s12">
+      					<label for="">
+      						{{ form_label(form.description) }}
+      						{{ form_errors(form.description) }}
+      					</label> {{ form_widget(form.description) }}
+      				</div>
+      			</div>
+      			<div class="row">
+              <div class="input-field col l4 s12">
+                {{ form_widget(form.articleType) }}
+      					<label for="">
+      						{{ form_label(form.articleType) }}
+      						{{ form_errors(form.articleType) }}
+      					</label>
+      				</div>
+      				<div class="input-field col l4 s12">
+      					<label for="">
+                  {{ form_widget(form.publited) }}
+                  <span>
+                    {{ form_label(form.publited) }}
+                    {{ form_errors(form.publited) }}
+                  </span>
+      					</label>
+      				</div>
+      			</div>
+            <div class="row">
+        			<div class="input-field col l12 s12">
+                <h5>Contenu</h5>
+                <textarea name="editor1" id="editor1" rows="10" cols="80" required>{{ article.content }}</textarea>
+                <script>
+                CKEDITOR.replace( 'editor1', {
+                    language: 'fr',
+                    uiColor: '#9AB8F3',
+                  });
+                </script>
+              </div>
+            </div>
+
+      			{{ form_widget(form.update, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
+      		{{ form_end(form) }}
+        </div>
+    </div>
+  </div>
+{% endblock %}

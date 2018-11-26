@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://cabinet-sei.ci/</title>
+  <link>http://cabinet-sei.ci/</link>
+
+<item>
+     <link>http://cabinet-sei.ci/</link>
+     <title>Bienvenue sur SEI</title>
+     <description>Bienvenue sur SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/services</link>
+     <title>Services de SEI</title>
+     <description>Services de SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/services/assistance-constitution-dossier-campus-france</link>
+     <title>Services SEI - Campus France</title>
+     <description>Services SEI - Campus France</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/services/assistance-candidature-universites</link>
+     <title>Services SEI - Candidature universités</title>
+     <description>Services SEI - Candidature universités</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/services/aide-dossier-logement</link>
+     <title>Services SEI - Acquisition de logement</title>
+     <description>Services SEI - Acquisition de logement</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/services/conseils-dossier-visa</link>
+     <title>Services SEI - Conseils dossier VISA</title>
+     <description>Services SEI - Conseils dossier VISA</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/countries</link>
+     <title>Pays prises en compte par SEI</title>
+     <description>Pays prises en compte par SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/pays-destination/france</link>
+     <title>Destinations SEI - France</title>
+     <description>Destinations SEI - France</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/pays-destination/belgique</link>
+     <title>Destinations SEI - Belgique</title>
+     <description>Destinations SEI - Belgique</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/pays-destination/canada</link>
+     <title>Destinations SEI - Canada</title>
+     <description>Destinations SEI - Canada</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/pays-destination/maroc</link>
+     <title>Destinations SEI - Maroc</title>
+     <description>Destinations SEI - Maroc</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/contact</link>
+     <title>Contact SEI</title>
+     <description>Contact SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/login</link>
+     <title>Connexion SEI</title>
+     <description>Connexion SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/about</link>
+     <title>A propos de SEI</title>
+     <description>A propos de SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/resetting/request</link>
+     <title>Réinitialisation de mot de passe SEI</title>
+     <description>Réinitialisation de mot de passe SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://cabinet-sei.ci/register/</link>
+     <title>Inscription SEI</title>
+     <description>Inscription SEI</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
